@@ -4,12 +4,12 @@ class Budget:
 
 
 food = Budget(5000)
-clothes = Budget(30000)
+clothing = Budget(30000)
 entertainments = Budget(2000)
 
 
-# first list the available categories
-# then list the functions available in the selected category
+# first list all the Categories
+# then list the options available in the selected category
 # perform the function
 # compute the balance
 
@@ -46,25 +46,171 @@ def init():
         elif foodOption == 2:
 
             amount = int(input("How much would you like to withdraw: \n"))
-            print("Take your cash, and your remaining balance is N" + str(food.balance - amount))
+
+            if amount <= food.balance:
+                print("Take your cash, and your remaining balance is N" + str(food.balance - amount))
+            else:
+                print("Sorry! Insufficient Balance")
 
         elif foodOption == 3:
-            amount = int(input("What issue will you like to report? \n"))
+
             print("Your Balance is N" + str(food.balance))
 
         elif foodOption == 4:
-            amount = int(input("What issue will you like to report? \n"))
-            print("Your Balance is N" + str(food.balance))
+
+            print("Which Category do you want to transfer funds to?")
+
+            print("1. Clothing")
+            print("2. Entertainment")
+
+            food_transfer_option = int(input("Please select an option: \n"))
+
+            if food_transfer_option == 1:
+
+                amount = int(input("How much do you want to transfer? \n"))
+                if amount <= food.balance:
+                    print("Transfer successful, and your remaining balance is N" + str(food.balance - amount))
+                else:
+                    print("Sorry! Insufficient Balance")
+
+            elif food_transfer_option == 2:
+
+                amount = int(input("How much do you want to transfer? \n"))
+                if amount <= food.balance:
+                    print("Transfer successful, and your remaining balance is N" + str(food.balance - amount))
+                else:
+                    print("Sorry! Insufficient Balance")
+
+            else:
+                print("Wrong option selected, please try again")
+
+        else:
+            print("Wrong option selected, please try again")
 
     elif selectedOption == 2:
-        amount = int(input("How much would you like to deposit? \n"))
-        print('Your Balance is N' + str(amount + food))
 
-        pass
+        print("You selected Clothing category")
+
+        print("Here are the Options available in Clothing category, select any to proceed")
+
+        print("1. Deposit Funds")
+        print("2. Withdraw Funds")
+        print("3. Check Balance")
+        print("4. Transfer Balance to another category")
+
+        clothing_option = int(input("Please select an option: \n"))
+        if clothing_option == 1:
+
+            amount = int(input("How much would you like to deposit? \n"))
+            print('Your Balance is N' + str(amount + clothing.balance))
+
+        elif clothing_option == 2:
+
+            amount = int(input("How much would you like to withdraw: \n"))
+
+            if amount <= clothing.balance:
+                print("Take your cash, and your remaining balance is N" + str(clothing.balance - amount))
+            else:
+                print("Sorry! Insufficient Balance")
+
+        elif clothing_option == 3:
+
+            print("Your Balance is N" + str(clothing.balance))
+
+        elif clothing_option == 4:
+
+            print("Which Category do you want to transfer funds to?")
+
+            print("1. Food")
+            print("2. Entertainment")
+
+            clothing_transfer_option = int(input("Please select an option: \n"))
+
+            if clothing_transfer_option == 1:
+
+                amount = int(input("How much do you want to transfer? \n"))
+                if amount <= clothing.balance:
+                    print("Transfer successful, and your remaining balance is N" + str(clothing.balance - amount))
+                else:
+                    print("Sorry! Insufficient Balance")
+
+            elif clothing_transfer_option == 2:
+
+                amount = int(input("How much do you want to transfer? \n"))
+                if amount <= clothing.balance:
+                    print("Transfer successful, and your remaining balance is N" + str(clothing.balance - amount))
+                else:
+                    print("Sorry! Insufficient Balance")
+
+            else:
+                print("Wrong option selected, please try again")
+
+        else:
+            print("Wrong option selected, please try again")
 
     elif selectedOption == 3:
-        amount = int(input("What issue will you like to report? \n"))
-        print('Thank you for contacting us')
 
+        print("You selected Entertainment category")
+
+        print("Here are the Options available in Entertainment category, select any to proceed")
+
+        print("1. Deposit Funds")
+        print("2. Withdraw Funds")
+        print("3. Check Balance")
+        print("4. Transfer Balance to another category")
+
+        entertainment_option = int(input("Please select an option: \n"))
+
+        if entertainment_option == 1:
+
+            amount = int(input("How much would you like to deposit? \n"))
+            print('Your Balance is N' + str(amount + entertainments.balance))
+
+        elif entertainment_option == 2:
+
+            amount = int(input("How much would you like to withdraw: \n"))
+
+            if amount <= entertainments.balance:
+                print("Take your cash, and your remaining balance is N" + str(entertainments.balance - amount))
+            else:
+                print("Sorry! Insufficient Balance")
+
+        elif entertainment_option == 3:
+
+            print("Your Balance is N" + str(entertainments.balance))
+
+        elif entertainment_option == 4:
+
+            print("Which Category do you want to transfer funds to?")
+
+            print("1. Food")
+            print("2. Clothing")
+
+            clothing_transfer_option = int(input("Please select an option: \n"))
+
+            if clothing_transfer_option == 1:
+
+                amount = int(input("How much do you want to transfer? \n"))
+                if amount <= entertainments.balance:
+                    print("Transfer successful, and your remaining balance is N" + str(entertainments.balance - amount))
+                else:
+                    print("Sorry! Insufficient Balance")
+
+            elif clothing_transfer_option == 2:
+
+                amount = int(input("How much do you want to transfer? \n"))
+                if amount <= entertainments.balance:
+                    print("Transfer successful, and your remaining balance is N" + str(entertainments.balance - amount))
+                else:
+                    print("Sorry! Insufficient Balance")
+
+            else:
+                print("Wrong option selected, please try again")
+
+        else:
+            print("Wrong option selected, please try again")
+
+    else:
+        print("Wrong option selected, please try again")
 
 init()
